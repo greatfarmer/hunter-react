@@ -26,6 +26,23 @@ class App extends Component {
     })
   }
 
+  handleUpdate = (id, data) => {
+    const { information } = this.state;
+    this.setState({
+      information: information.map(
+        info => {
+          if(info.id === id) {
+            return {
+              ...data,
+              id
+            };
+          }
+          return info;
+        }
+      )
+    });
+  }
+
   render() {
     return (
       <div>
@@ -33,6 +50,7 @@ class App extends Component {
         <HuntingInfoList
           data={this.state.information}
           onRemove={this.handleRemove}
+          onUpdate={this.handleUpdate}
         />
       </div>
     )
