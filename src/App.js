@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css';
 import HuntingForm from './components/HuntingForm';
 import HuntingInfoList from './components/HuntingInfoList';
 
